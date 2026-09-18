@@ -50,6 +50,7 @@
 #include "circt/Dialect/Synth/SynthDialect.h"
 #include "circt/Dialect/SystemC/SystemCDialect.h"
 #include "circt/Dialect/Verif/VerifDialect.h"
+#include "circt/Dialect/Foo/FooDialect.h"
 #include "mlir/Dialect/SMT/IR/SMTDialect.h"
 #include "mlir/IR/Dialect.h"
 
@@ -95,7 +96,8 @@ inline void registerAllDialects(mlir::DialectRegistry &registry) {
     sv::SVDialect,
     synth::SynthDialect,
     systemc::SystemCDialect,
-    verif::VerifDialect
+    verif::VerifDialect,
+    foo::FooDialect
   >();
   // clang-format on
 }
