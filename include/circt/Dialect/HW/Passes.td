@@ -183,5 +183,12 @@ def HWConvertBitcasts : Pass<"hw-convert-bitcasts", "mlir::ModuleOp"> {
   let dependentDialects = ["comb::CombDialect"];
 }
 
+def FooWires : Pass<"hw-foo-wires", "hw::HWModuleOp"> {
+  let summary = "Change all wires' name to foo_<n>.";
+  let description = [{
+    Very basic pass that numbers all of the wires in a given module.
+    The wires' names are then all converted to foo_<that number>.
+  }];
+}
 
 #endif // CIRCT_DIALECT_HW_PASSES_TD
