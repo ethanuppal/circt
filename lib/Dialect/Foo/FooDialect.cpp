@@ -23,6 +23,8 @@ using namespace circt::foo;
 // Dialect specification.
 //===----------------------------------------------------------------------===//
 
+#include "circt/Dialect/Foo/FooDialect.cpp.inc"
+
 namespace {
 
 // We implement the OpAsmDialectInterface so that Foo dialect operations
@@ -48,4 +50,4 @@ void FooDialect::initialize() {
   addInterfaces<FooOpAsmDialectInterface>();
 }
 
-#include "circt/Dialect/Foo/FooDialect.cpp.inc"
+

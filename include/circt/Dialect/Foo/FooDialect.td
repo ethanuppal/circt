@@ -1,7 +1,20 @@
+#ifndef CIRCT_DIALECT_FOO_FOODIALECT_TD
+#define CIRCT_DIALECT_FOO_FOODIALECT_TD
 
 include "circt/Dialect/HW/HWTypes.td"
 include "mlir/IR/OpBase.td"
-include "circt/Dialect/Foo/FooDialect.td"
+
+def FooDialect : Dialect {
+  let name = "foo";
+  let cppNamespace = "::circt::foo";
+
+  let summary = "Types and operations for the foo dialect";
+  let description = [{
+    This dialect defines the `foo` dialect, which is utterly useless.
+  }];
+
+}
+
 
 // Base class for the operation in this dialect.
 class FooOp<string mnemonic, list<Trait> traits = []> :
@@ -30,3 +43,5 @@ class BarOp: FooOp<"bar", []> {
   ];
 }
 
+
+#endif
